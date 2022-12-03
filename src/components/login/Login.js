@@ -49,7 +49,7 @@ const Login = () => {
         <Box className={classes.login}>
             <h1>Login</h1>
             <FacebookLogin
-                appId="1082534248908784"
+                appId={process.env.FACEBOOK_APP_ID}
                 // autoLoad={true}
                 fields="name,email,picture"
                 cssClass={classes.login__btn}
@@ -57,7 +57,7 @@ const Login = () => {
                 textButton="Login with Facebook"
             />
             <GoogleLogin
-                clientId="905703355143-hbpbqk2bmpnjocs9j3h4r4537qmru1ma.apps.googleusercontent.com"
+                clientId={process.env.GOOGLE_CLIENT_ID}
                 className={classes.login__btn}
                 onSuccess={successResponseGoogle}
                 onFailure={failResponseGoogle}
@@ -65,7 +65,7 @@ const Login = () => {
                 render={(renderProps) => (<button className={classes.login__btn} onClick={renderProps.onClick}>Login with Google</button>)}
             />
             <InstagramLogin
-                clientId="ad6d0ba2753ddfe70dd3a33522df5e7a"
+                clientId={process.env.INSTOGRAM_CLIENT_ID}
                 onSuccess={successResponseInstagram}
                 onFailure={failResponseInstagram}
                 cssClass={classes.login__btn}
@@ -73,8 +73,8 @@ const Login = () => {
             <TwitterLogin
                 authCallback={responseTwitter}
                 className={classes.login__btn}
-                // consumerKey={CONSUMER_KEY}
-                consumerSecret={'L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg'}
+                consumerKey={process.env.TWITTER_CONSUMER_KEY}
+                consumerSecret={process.env.TWITTER_CONSUMER_SECRET}
             // children={<button>Login with Twitter</button>}
             >Login with Twitter</TwitterLogin>
         </Box>
