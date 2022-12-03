@@ -1,0 +1,12 @@
+.box {
+  background-color: #ffffff;
+  transition: all 0.25s cubic-bezier(0.86, 1.26, 0.59, 1.03);
+  /* min-height: 1rem; */
+  /* padding: 1rem; */
+  border-radius: 1rem;
+  box-shadow: 2px 2px 2px #f2f2f2, -2px -1px 3px #ffffff;
+}
+.box:hover {
+  /* transform: translateZ(0) scale(1.05); */
+  backface-visibility: hidden;
+}
